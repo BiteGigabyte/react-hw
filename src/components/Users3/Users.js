@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Post from "./Post";
+import './Users.css';
 
 
                                 // {/*// /!*#Advance*!/*/}
@@ -29,11 +30,11 @@ const Users = () => {
 
 
     return (
-        <div>
+        <div className={'main_users3'}>
             {users.map(value => {
 
                     return (
-                        <div key={value.id}>
+                        <div key={value.id} className={'users3'}>
 
                                 {/*// /!*вивести всіх юзерів з плайсхолдеру*!/*/}
                                 <h2>{value.id}: {value.name}</h2>

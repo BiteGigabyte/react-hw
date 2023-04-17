@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import './Users.css';
+
 
 const Post = ({id}) => {
 
@@ -13,11 +15,11 @@ const Post = ({id}) => {
 
 
     return (
-        <div>
+        <div className={'main_post3'}>
             {
                 post.map((value) => {
                     return (
-                        <div key={value.id}>
+                        <div key={value.id} className={'post3'}>
                         <h2>{value.id}: {value.title}</h2>
                         <h3>{value.body}</h3>
                         </div>
