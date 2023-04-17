@@ -1,7 +1,7 @@
 import './App.css';
-import Posts from "./components/posts1/Posts";
+// import Posts from "./components/posts1/Posts";
 // import SpaceLaunches from "./components/launches2/SpaceLaunches";
-// import Users from "./components/Users3/Users";
+import Users from "./components/Users3/Users";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/*відобразити кожного інформацію (id,title) з кожного поста (компонента Post)*/}
       {/*Зробити кнопку вибора поста, при натисканні на яку в Posts.js ви покажете детальну інфомацію про пост(всю інфу)*/}
         {/*  */}
-        <Posts />
+        {/*<Posts />*/}
         {/*=====*/}
 
 
@@ -41,7 +41,7 @@ function App() {
       {/*в кожного юзера має бути кнопка яка буде показувати пости цього юзера*/}
       {/*пости мають виводитись під компонетою Users (в App компоненті)*/}
         {/*  */}
-        {/*  <Users />*/}
+          <Users />
         {/*  */}
 
     </div>

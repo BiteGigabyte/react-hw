@@ -34,7 +34,7 @@ const Users = () => {
                                 <h3>{value.username}</h3>
                                 <p>{value.email}</p>
                                 {/*// /!*в кожного юзера має бути кнопка яка буде показувати пости цього юзера*!/*/}
-                                {/*<button onClick={}>User details</button>*/}
+                                {/*<button onClick={clickMethod}>User details</button>*/}
                                 {/*// /!*пости мають виводитись під компонетою Users (в App компоненті)*!/*/}
 
 

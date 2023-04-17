@@ -39,7 +39,7 @@ const Posts = () => {
                             <h2>
                                 {post.id}: {post.title}
                             </h2>
-                            <h3>user id: {post.userId}</h3>
+                            <h3>user id: {post['userId']}</h3>
                             <p>{post.body}</p>
                         </div>
                     )}
