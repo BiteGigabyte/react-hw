@@ -18,7 +18,12 @@ const Posts = () => {
     }, []);
 
     const handleClick = id => {
-        setCurrentPostId(id);
+        // setCurrentPostId(id);
+        if (id === currentPostId) {
+            setCurrentPostId(null);
+        } else {
+            setCurrentPostId(id);
+        }
     };
 
     return (
