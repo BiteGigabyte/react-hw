@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import Post from "./Post";
 
 
                                 // {/*// /!*#Advance*!/*/}
@@ -9,7 +10,7 @@ import axios from "axios";
 const Users = () => {
 
     const [users, setUsers] = useState([]);
-    // const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState(null);
 
     useEffect(() => {
         axios('https://jsonplaceholder.typicode.com/users/').then(value => value.data).then(value => {
@@ -17,9 +18,14 @@ const Users = () => {
         })
     }, [])
 
-    // const clickMethod (id) = {
-    //
-    // }
+
+    const clickMethod = (id) => {
+        if (id === posts) {
+        setPosts(null);
+    } else {
+        setPosts(id);
+    }
+    }
 
 
     return (
@@ -34,9 +40,11 @@ const Users = () => {
                                 <h3>{value.username}</h3>
                                 <p>{value.email}</p>
                                 {/*// /!*в кожного юзера має бути кнопка яка буде показувати пости цього юзера*!/*/}
-                                {/*<button onClick={clickMethod}>User details</button>*/}
+                                <button onClick={() => clickMethod(value.id)}>User details</button>
                                 {/*// /!*пости мають виводитись під компонетою Users (в App компоненті)*!/*/}
-
+                                {
+                                    posts === value.id && <Post id={posts} />
+                                }
 
                         </div>
                     )
