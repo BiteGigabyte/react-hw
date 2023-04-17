@@ -1,0 +1,9 @@
+.borderius {
+    border: 3px solid #5a5ae1;
+    margin-top: 5px;
+}
+
+.task1 {
+    border: 3px solid lawngreen;
+    padding-bottom: 5px;
+}
