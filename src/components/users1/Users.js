@@ -10,7 +10,7 @@ import UsersForm from "./UsersForm";
 const Users = () => {
 
     const [users, setUsers] = useState([]);
-    const [showUsers, setShowUsers] = useState(1);
+    const [showUsers, setShowUsers] = useState(true);
 
     useEffect(() => {
         jsonServise.getAllUsers().then(value => value.data).then(value => setUsers(value));
@@ -18,17 +18,19 @@ const Users = () => {
 
 
     const handleSubmit = (action) => {
-        setShowUsers(action !== 0);
+        setShowUsers(action !== false);
     };
 
     return (
         <div>
-            <UsersForm />
-            <button onClick={() => handleSubmit(showUsers ? 0 : 1)}>
+            <UsersForm setUsers={setUsers}/>
+            {/*<button onClick={() => handleSubmit(showUsers ? false : true)}>*/}
+            <button onClick={() => handleSubmit(!showUsers)}>
                 {showUsers ? 'Hide' : 'Show'} Users
             </button>
-            {showUsers &&
-                users.map((user) => <User key={user.id} user={user} />)}
+            {
+            showUsers && users.map((user) => <User key={user.id} user={user} />)
+            }
         </div>
     );
 };

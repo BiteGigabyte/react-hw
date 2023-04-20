@@ -6,7 +6,7 @@ import {urls} from "../configs/urls";
 
 const jsonServise = {
     getAllUsers:()=>axiosServiceJson.get(urls.users),
-    createNewUser: ()=>axiosServiceJson.post(urls.users),
+    createNewUser: (user)=>axiosServiceJson.post(urls.users, user),
     createNewComment:(comment)=>axiosServiceJson.post(urls.comments, comment)
 }
 
