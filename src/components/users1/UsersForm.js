@@ -1,6 +1,6 @@
+import {joiResolver} from "@hookform/resolvers/joi";
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {joiResolver} from "@hookform/resolvers/joi";
 
 
 import {jsonServise} from "../../services/json-servise";
