@@ -10,7 +10,7 @@ import UsersForm from "./UsersForm";
 const Users = () => {
 
     const [users, setUsers] = useState([]);
-    const [showUsers, setShowUsers] = useState(true);
+    const [showUsers, setShowUsers] = useState(false);
 
     useEffect(() => {
         jsonServise.getAllUsers().then(value => value.data).then(value => setUsers(value));
