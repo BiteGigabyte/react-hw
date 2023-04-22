@@ -1,9 +1,13 @@
 import './App.css';
+import React, {useState} from "react";
 
 
+import Comments from "./components/comments2/Comments";
+import Cars from "./components/cars3/Cars";
+import PagesHeader from "./header/PagesHeader";
+import {PagesEnum} from "./header/pages-enum";
 import Users from "./components/users1/Users";
-import UsersForm from "./components/users1/UsersForm";
-import React from "react";
+// import UsersForm from "./components/users1/UsersForm";
 
 
 
@@ -16,10 +20,14 @@ import React from "react";
 
 
 function App() {
+    const [choice, setChoice] = useState(PagesEnum.COMMENTS);
   return (
     <div className="App">
-      <Users/>
-
+        <PagesHeader setChoice={setChoice} />
+        {choice === PagesEnum.USERS && <Users/>}
+        {choice === PagesEnum.COMMENTS && <Comments/>}
+        {choice === PagesEnum.CARS && <Cars/>}
+      {/*<Users/>*/}
     </div>
   );
 }
