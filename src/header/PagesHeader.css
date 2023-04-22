@@ -1,9 +1,16 @@
 .headerDiv {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1.5% 0;
 
 }
 
 .headerButton {
-
+    flex: 1;
+    max-width: 200px;
+    height: 50px;
+    width: 24%;
+    margin: 0 2% 0 2%;
 }

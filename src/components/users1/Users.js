@@ -4,6 +4,7 @@ import {jsonServise} from "../../services/json-servise";
 
 import User from "./User";
 import UsersForm from "./UsersForm";
+import './Users.css';
 // import {urls} from "../../configs/urls";
 
 
@@ -28,7 +29,7 @@ const Users = () => {
             {
             showUsers && users.map((user) => <User key={user.id} user={user} />)
             }
-            <button onClick={() => handleSubmit(!showUsers)}>
+            <button className={'showButton'} onClick={() => handleSubmit(!showUsers)}>
                 {showUsers ? 'Hide' : 'Show'} Users
             </button>
         </div>

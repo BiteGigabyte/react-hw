@@ -18,11 +18,9 @@ const PagesHeader = ({ setChoice }) => {
 
     return (
         <div className={'headerDiv'}>
-            <div className={'Header'}>
                 <button className={'headerButton'} onClick={() => handleButtonClick(PagesEnum.USERS)}>Users</button>
                 <button className={'headerButton'} onClick={() => handleButtonClick(PagesEnum.COMMENTS)}>Comments</button>
                 <button className={'headerButton'} onClick={() => handleButtonClick(PagesEnum.CARS)}>Cars</button>
-            </div>
         </div>
     );
 };
