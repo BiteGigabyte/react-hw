@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {jsonServise} from "../../services/json-servise";
+import {jsonServises} from "../../services/json-servises";
 
 
 import User from "./User";
@@ -14,7 +14,7 @@ const Users = () => {
     const [showUsers, setShowUsers] = useState(false);
 
     useEffect(() => {
-        jsonServise.getAllUsers().then(value => value.data).then(value => setUsers(value));
+        jsonServises.getAllUsers().then(value => value.data).then(value => setUsers(value));
     }, [])
 
 

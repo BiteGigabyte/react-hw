@@ -3,7 +3,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 
 
-import {jsonServise} from "../../services/json-servise";
+import {jsonServises} from "../../services/json-servises";
 import {userValidator} from "../../validators/user-validator";
 
 const UsersForm = ({setUsers}) => {
@@ -17,7 +17,7 @@ const UsersForm = ({setUsers}) => {
     );
 
     const create = async (user) => {
-        const {data} = await jsonServise.createNewUser(user);
+        const {data} = await jsonServises.createNewUser(user);
         setUsers(prev => [...prev, data]);
         reset();
     }
