@@ -35,6 +35,7 @@ const Comments = () => {
         setCommentIndex(0);
     };
 
+
     const displayedComments = showComments ? comments.slice(commentIndex, commentIndex + numComments) : [];
 
     return (
