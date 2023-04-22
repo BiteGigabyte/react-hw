@@ -25,12 +25,12 @@ const Users = () => {
         <div>
             <UsersForm setUsers={setUsers}/>
             {/*<button onClick={() => handleSubmit(showUsers ? false : true)}>*/}
-            <button onClick={() => handleSubmit(!showUsers)}>
-                {showUsers ? 'Hide' : 'Show'} Users
-            </button>
             {
             showUsers && users.map((user) => <User key={user.id} user={user} />)
             }
+            <button onClick={() => handleSubmit(!showUsers)}>
+                {showUsers ? 'Hide' : 'Show'} Users
+            </button>
         </div>
     );
 };
