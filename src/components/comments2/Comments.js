@@ -60,6 +60,7 @@ const Comments = () => {
                         <option value={50}>50</option>
                         <option value={100}>100</option>
                         <option value={500}>500</option>
+                        <option value={100}>1000</option>
                         <option value={comments.length}>All</option>
                     </select>
                     <label htmlFor={"numCommentsSelect"}>comments</label>
