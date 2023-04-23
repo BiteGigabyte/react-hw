@@ -7,7 +7,9 @@ import {carService} from "../../services/cars-servise";
 
 const Cars = () => {
     const [cars, setCars] = useState([]);
-    const [showCars, setShowCars] = useState(false);
+    const [showCars, setShowCars] = useState(true);
+    const [carForUpdate, setCarForUpdate] = useState(null);
+    //
     const [carIndex, setCarIndex] = useState(0);
     const [numCars, setNumCars] = useState(5);
 
@@ -16,7 +18,7 @@ const Cars = () => {
             .getAll()
             .then((value) => value.data)
             .then((value) => setCars(value));
-    }, []);
+    }, [cars]);
 
 
     const handleSubmit = (action) => {
@@ -41,8 +43,9 @@ const Cars = () => {
 
     return (
         <div className={"carsDiv"}>
-            {showCars && displayedComments.map((car) => <Car key={car.id} cars={car} />)}
-            <CarForm setCars={setCars}/>
+            {showCars && displayedComments.map((car) => <Car key={car.id} cars={car} setCarForUpdate={setCarForUpdate}/>)}
+            {/*<CarForm setCars={setCars}/>*/}
+            <CarForm setShowCars={setShowCars} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
             <div className={"carsButtonDiv"}>
                 <div className={"pagination"}>
                     <button className={"prevButton"} onClick={handlePrevClick} disabled={carIndex === 0}>

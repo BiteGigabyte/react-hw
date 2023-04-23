@@ -19,7 +19,7 @@ import Users from "./components/users1/Users";
 
 
 function App() {
-    const [choice, setChoice] = useState(PagesEnum.COMMENTS);
+    const [choice, setChoice] = useState(PagesEnum.CARS);
   return (
     <div className="App">
         <PagesHeader setChoice={setChoice} />

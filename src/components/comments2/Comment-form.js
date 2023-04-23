@@ -24,9 +24,6 @@ const CommentForm = ({setComments}) => {
 
     return (
         <form onSubmit={handleSubmit(create)}>
-            {/*<input type="number" placeholder={'user id'} {...register('userId'*/}
-            {/*)} />*/}
-            {/*{errors.userId && <span>{errors.userId.message}</span>}*/}
             <input type="text" placeholder={'name'} {...register('name'
             )} />
             {errors.name && <span>{errors.name.message}</span>}
@@ -36,7 +33,7 @@ const CommentForm = ({setComments}) => {
             <input type="text" placeholder={'body'} {...register('body'
             )} />
             {errors.body && <span>{errors.body.message}</span>}
-            <button disabled={!isValid}>Create</button>
+            <button disabled={!isValid} >Create</button>
         </form>
     );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 // import {joiResolver} from "@hookform/resolvers/joi";
 
@@ -6,27 +6,43 @@ import {useForm} from "react-hook-form";
 // import {carValidator} from "../../validators/car-validator";
 import {carService} from "../../services/cars-servise";
 
-const CarForm = ({setCars}) => {
+// const CarForm = ({setCars}) => {
+const CarForm = ({setShowCars, carForUpdate, setCarForUpdate}) => {
 
-    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm(
+    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm(
         {
             mode: 'all',
             // resolver: joiResolver(carValidator)
         }
     );
 
+    useEffect(() => {
+        if (carForUpdate) {
+            setValue('brand', carForUpdate.brand, {shouldValidate: true})
+            setValue('price', carForUpdate.price, {shouldValidate: true})
+            setValue('year', carForUpdate.year, {shouldValidate: true})
+        }
+    },[carForUpdate, setValue])
+
+
     const create = async (car) => {
-        const {data} = await carService.create(car);
-        setCars(prev => [...prev, data]);
+        // const {data} = await carService.create(car);
+        setShowCars(prevState => prevState);
+        await carService.create(car);
+        // setCars(prev => [...prev]);
         reset();
+    }
+
+    const update = async (car) => {
+        await carService.updateById(carForUpdate.id, car);
+        setShowCars(prevState => prevState);
+        reset();
+        setCarForUpdate(null);
     }
 
 
     return (
-        <form onSubmit={handleSubmit(create)}>
-            {/*<input type="number" placeholder={'user id'} {...register('userId'*/}
-            {/*)} />*/}
-            {/*{errors.userId && <span>{errors.userId.message}</span>}*/}
+        <form onSubmit={handleSubmit(carForUpdate ? update : create)}>
             <input type="text" placeholder={'brand'} {...register('brand'
             )} />
             {errors.name && <span>{errors.name.message}</span>}
@@ -36,7 +52,7 @@ const CarForm = ({setCars}) => {
             <input type="number" placeholder={'year'} {...register('year'
             )} />
             {errors.body && <span>{errors.body.message}</span>}
-            <button disabled={!isValid}>Create</button>
+            <button disabled={!isValid} >{carForUpdate ? 'Update' : 'Create'}</button>
         </form>
     );
 };
