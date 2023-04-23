@@ -1,10 +1,9 @@
-
 import React, {useEffect, useState} from "react";
-import { jsonServises } from "../../services/json-servises";
 
 import Comment from "./Comment";
-import "./Comments.css";
 import CommentForm from "./Comment-form";
+import "./Comments.css";
+import { jsonServises } from "../../services/json-servises";
 
 const Comments = () => {
     const [comments, setComments] = useState([]);
