@@ -1,7 +1,7 @@
 import React from 'react';
 import {carService} from "../../services/cars-servise";
 
-// import './Car.css';
+import './Car.css';
 
 const Car = ({cars, setCarForUpdate, setShowCars}) => {
 
@@ -17,9 +17,11 @@ const Car = ({cars, setCarForUpdate, setShowCars}) => {
             <h3>post id: {id}. brand: {brand}.</h3>
             <h4>price: {price}</h4>
             <h5>year: {year}</h5>
+            <div className={'carButtonsDiv'}>
             <button onClick={() => Delete(id)}>Delete</button>
             <button onClick={() => setCarForUpdate(cars)}>Update car</button>
-            <button>Update car element</button>
+            </div>
+                {/*<button>Update car element</button>*/}
         </div>
     );
 };

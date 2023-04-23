@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
 // import {joiResolver} from "@hookform/resolvers/joi";
 
 
-// import {carValidator} from "../../validators/car-validator";
+import {carsValidator} from "../../validators/cars-validator";
 import {carService} from "../../services/cars-servise";
 
 // const CarForm = ({setCars}) => {
@@ -12,7 +13,7 @@ const CarForm = ({setShowCars, carForUpdate, setCarForUpdate}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm(
         {
             mode: 'all',
-            // resolver: joiResolver(carValidator)
+            resolver: joiResolver(carsValidator)
         }
     );
 
@@ -43,16 +44,16 @@ const CarForm = ({setShowCars, carForUpdate, setCarForUpdate}) => {
 
     return (
         <form onSubmit={handleSubmit(carForUpdate ? update : create)}>
-            <input type="text" placeholder={'brand'} {...register('brand'
+            <input style={{height: '39px'}} type="text" placeholder={'brand'} {...register('brand'
             )} />
             {errors.name && <span>{errors.name.message}</span>}
-            <input type="number" placeholder={'price'} {...register('price'
+            <input style={{height: '39px'}} type="number" placeholder={'price'} {...register('price'
             )} />
             {errors.email && <span>{errors.email.message}</span>}
-            <input type="number" placeholder={'year'} {...register('year'
+            <input style={{height: '39px'}} type="number" placeholder={'year'} {...register('year'
             )} />
             {errors.body && <span>{errors.body.message}</span>}
-            <button disabled={!isValid} >{carForUpdate ? 'Update' : 'Create'}</button>
+            <button style={{height: '39px', 'margin-left':'3px'}} disabled={!isValid} >{carForUpdate ? 'Update' : 'Create'}</button>
         </form>
     );
 };

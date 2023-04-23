@@ -7,7 +7,7 @@ import {carService} from "../../services/cars-servise";
 
 const Cars = () => {
     const [cars, setCars] = useState([]);
-    const [showCars, setShowCars] = useState(true);
+    const [showCars, setShowCars] = useState(false);
     const [carForUpdate, setCarForUpdate] = useState(null);
     //
     const [carIndex, setCarIndex] = useState(0);
@@ -47,17 +47,17 @@ const Cars = () => {
             {/*<CarForm setCars={setCars}/>*/}
             <CarForm setShowCars={setShowCars} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
             <div className={"carsButtonDiv"}>
-                <div className={"pagination"}>
-                    <button className={"prevButton"} onClick={handlePrevClick} disabled={carIndex === 0}>
+                <div style={{'margin-top': '7px'}} className={"pagination"}>
+                    <button style={{width: '19%', height: '50px'}} className={"prevButton"} onClick={handlePrevClick} disabled={carIndex === 0}>
                         Prev
                     </button>
-                    <button className={"nextButton"} onClick={handleNextClick} disabled={carIndex + numCars >= cars.length}>
+                    <button style={{width: '19%', height: '50px'}} className={"nextButton"} onClick={handleNextClick} disabled={carIndex + numCars >= cars.length}>
                         Next
                     </button>
                 </div>
-                <div className={"numCarsSelect"}>
+                <div style={{'font-size': '200%'}} className={"numCarsSelect"}>
                     <label htmlFor={"numCarsSelect"}>Show</label>
-                    <select id={"numCarsSelect"} value={numCars} onChange={handleNumCommentsChange}>
+                    <select style={{'font-size':'100%'}} id={"numCarsSelect"} value={numCars} onChange={handleNumCommentsChange}>
                         <option value={5}>5</option>
                         <option value={10}>10</option>
                         <option value={20}>20</option>
