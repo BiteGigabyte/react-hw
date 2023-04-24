@@ -27,17 +27,17 @@ function App() {
     <div className="App">
       <div>
         <h2>menu</h2>
-        <div>
-          <div>
+        <div className={'menuDiv'}>
+          <div className={'menuDivLink'}>
             <Link to={'/'}>Main page</Link>
           </div>
-          <div>
+          <div className={'menuDivLink'}>
             <Link to={'/todos'}>todos</Link>
           </div>
-          <div>
+          <div className={'menuDivLink'}>
             <Link to={'/albums'}>albums</Link>
           </div>
-          <div>
+          <div className={'menuDivLink'}>
             <Link to={'/comments'}>comments</Link>
           </div>
         </div>
@@ -58,7 +58,7 @@ function App() {
             {/*</Route>*/}
            {/*</Route>*/}
           <Route path={'/comments'} element={<Comments/>}>
-          <Route path={':id'} element={<CommentDetails/>}/>
+          <Route path={'/comments/:id'} element={<CommentDetails/>}/>
           </Route>
         </Routes>
 

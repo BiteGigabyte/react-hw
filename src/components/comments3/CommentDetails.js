@@ -16,16 +16,11 @@ const CommentDetails = () => {
     }, [id]);
 
     return (
-        <div>
-            {/*<h4>user id: {post.userId.toString()}; id: {post.id}</h4>*/}
+        <div style={{border: '2px solid yellow'}}>
+            <h4>Comment details view: </h4>
             {post && <h4>id: {post.id}</h4>}
             {post && <h3>title: {post.title}</h3>}
             {post && <h4>body: {post.body}</h4>}
-
-            {/*{*/}
-            {/*    // <!--post && JSON.stringify(post)-->*/}
-            {/*}*/}
-
         </div>
     );
 };
