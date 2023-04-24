@@ -1,5 +1,5 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 
 const Comment = ({item}) => {
     let navigate = useNavigate();
@@ -12,10 +12,15 @@ const Comment = ({item}) => {
             {/*{console.log(item.completed)}*/}
 
             <button onClick={() => {
-                navigate(item.id.toString());
+                navigate(item.postId.toString());
             }}>details of comment
             </button>
 
+
+            <div>
+                <h4>Comment details view: </h4>
+                <Outlet/>
+            </div>
         </div>
     );
 };

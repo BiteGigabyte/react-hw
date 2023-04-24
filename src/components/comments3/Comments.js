@@ -31,10 +31,10 @@ const Todos = () => {
 
             </div>
 
-            <div>s
-                <h4>Comment details view: </h4>
-                <Outlet/>
-            </div>
+            {/*<div>*/}
+            {/*    <h4>Comment details view: </h4>*/}
+            {/*    <Outlet/>*/}
+            {/*</div>*/}
         </div>
     );
 };

@@ -18,9 +18,9 @@ const CommentDetails = () => {
     return (
         <div>
             {/*<h4>user id: {post.userId.toString()}; id: {post.id}</h4>*/}
-            <h4>id: {post.id}</h4>
-            <h3>title: {post.title}</h3>
-            <h4>body: {post.body}</h4>
+            {post && <h4>id: {post.id}</h4>}
+            {post && <h3>title: {post.title}</h3>}
+            {post && <h4>body: {post.body}</h4>}
 
             {/*{*/}
             {/*    // <!--post && JSON.stringify(post)-->*/}
