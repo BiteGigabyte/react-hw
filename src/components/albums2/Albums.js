@@ -1,5 +1,4 @@
 import axios from "axios";
-// import {Outlet} from "react-router-dom";
 import React,{useEffect, useState} from 'react';
 
 import Album from "./Album";
@@ -12,7 +11,6 @@ const Albums = () => {
         axios('https://jsonplaceholder.typicode.com/albums')
             .then(value => value.data)
             .then(value => {
-                // setPosts([...value]);
                 setPosts(value);
             });
 

@@ -1,5 +1,4 @@
 import axios from "axios";
-// import {Outlet} from "react-router-dom";
 import React,{useEffect, useState} from 'react';
 
 import Todo from "./Todo";
@@ -12,7 +11,6 @@ const Todos = () => {
         axios('https://jsonplaceholder.typicode.com/todos')
             .then(value => value.data)
             .then(value => {
-                // setPosts([...value]);
                 setPosts(value);
             });
 

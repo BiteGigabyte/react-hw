@@ -10,7 +10,6 @@ const Comment = ({item}) => {
             <h3> name: {item.name}</h3>
             <h3> email: {item.email}</h3>
             <h4>body: {item.body}</h4>
-            {/*{console.log(item.completed)}*/}
 
             <button style={{margin: '5px'}} onClick={() => {
                 navigate(item.postId.toString());

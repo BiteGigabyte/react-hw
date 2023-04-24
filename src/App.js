@@ -49,14 +49,6 @@ function App() {
         <Routes>
           <Route path={'/todos'} element={<Todos/>}/>
           <Route path={'/albums'} element={<Albums/>}/>
-            {/*<Route path={'users'} element={<Users/>}>*/}
-            {/*  <Route path={':id'} element={<UserDetails/>}/>*/}
-            {/*</Route>*/}
-            {/*<Route path={'posts'} element={<Posts/>}>*/}
-            {/*  <Route path={':id'} element={<PostDetails/>} />*/}
-
-            {/*</Route>*/}
-           {/*</Route>*/}
           <Route path={'/comments'} element={<Comments/>}>
           <Route path={'/comments/:id'} element={<CommentDetails/>}/>
           </Route>
