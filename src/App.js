@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {Button} from "./Button/Button";
+import {useContext} from "react";
+import {Context} from "./index";
+import {First} from "./First";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const context = useContext(Context);
+    context.users = ['max', 'kokos', 'kesha']
+    return (
+        <div>
+            {/*<Button bgColor={'red'} styles={{color:'blue'}} height={'50px'} id={1234}>*/}
+            {/*save*/}
+            {/*</Button>*/}
+            {/*<Button bgColor={'black'} styles={{color:'snow'}}>update</Button>*/}
+            <First/>
+        </div>
+    );
+};
 
 export default App;
