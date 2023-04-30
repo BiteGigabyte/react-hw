@@ -1,6 +1,6 @@
 import { Component } from "react";
-// import { Post } from "./Post";
-// import { postService } from "../../services/post-service";
+
+
 import {commentsService} from "../../services/comments-service";
 import {Comment} from "./Comment";
 

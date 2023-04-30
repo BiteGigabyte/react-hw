@@ -22,21 +22,21 @@ import {Comments} from "./components/comments2/Comments";
 
 function App() {
 
-
     return (
         <div className="App">
-
-        <Link to={'posts1'}>Posts - 1</Link>
-        <Link to={'comments2'}>Comments - 2</Link>
+            <div>
+                <Link to={'posts1'}> Posts - 1 </Link>
+            </div>
+            <div>
+                <Link to={'comments2'}> Comments - 2 </Link>
+            </div>
 
         <Routes>
-
             <Route path={'posts1'} element={<Posts/>}/>
             <Route path={'comments2'} element={<Comments/>}/>
             {/*<Route path={'comments2'} element={}*/}
 
         </Routes>
-
 
         </div>
     );
