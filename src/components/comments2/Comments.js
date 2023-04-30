@@ -1,13 +1,15 @@
 import { Component } from "react";
-import { Post } from "./Post";
-import { postService } from "../../services/post-service";
+// import { Post } from "./Post";
+// import { postService } from "../../services/post-service";
+import {commentsService} from "../../services/comments-service";
+import {Comment} from "./Comment";
 
-class Posts extends Component {
+class Comments extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [],
-            isVisible: false, // додали стан isVisible для відображення постів
+            comments: [],
+            isVisible: true, // додали стан isVisible для відображення постів
         };
         console.log("constructor");
     }
@@ -19,10 +21,10 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        postService
+        commentsService
             .getAll()
             .then((value) => value.data)
-            .then((value) => this.setState({ posts: value }));
+            .then((value) => this.setState({ comments: value }));
         console.log("componentDidMount");
     }
 
@@ -32,20 +34,20 @@ class Posts extends Component {
 
     render() {
         console.log("render");
-        const { isVisible, posts } = this.state; // деструктуризація для зручності
+        const { isVisible, comments } = this.state; // деструктуризація для зручності
         return (
             <div>
                 <button onClick={this.toggleVisibility}>
                     {isVisible ? "Hide" : "Show"}
                 </button> {/* кнопка з методом toggleVisibility */}
-                {isVisible && posts.map((post) => <Post key={post.id} post={post} />)}
+                {isVisible && comments.map((comment) => <Comment key={comment.id} comment={comment} />)}
                 {/* виводимо компонент Posts, якщо isVisible = true */}
             </div>
         );
     }
 }
 
-export { Posts };
+export { Comments };
 
 
 

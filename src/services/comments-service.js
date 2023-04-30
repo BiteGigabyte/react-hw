@@ -1,10 +1,10 @@
 import {axiosService} from "./axios-service";
 import {urls} from "../constants/urls";
 
-const postService = {
-    getAll:()=>axiosService.get(urls.posts)
+const commentsService ={
+    getAll:()=>axiosService.get(urls.comments)
 }
 
 export {
-    postService
+    commentsService
 }
