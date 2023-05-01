@@ -7,6 +7,7 @@ import React from "react";
 import './App.css';
 import {Posts} from "./components/posts1/Posts";
 import {Comments} from "./components/comments2/Comments";
+import AnimalsPage from "./components/animals3/Animals-page";
 //
 
 
@@ -30,12 +31,14 @@ function App() {
             <div>
                 <Link to={'comments2'}> Comments - 2 </Link>
             </div>
+            <div>
+                <Link to={'animals3'}> Animals - 3 </Link>
+            </div>
 
         <Routes>
             <Route path={'posts1'} element={<Posts/>}/>
             <Route path={'comments2'} element={<Comments/>}/>
-            {/*<Route path={'comments2'} element={}*/}
-
+            <Route path={'animals3'} element={<AnimalsPage/>}/>
         </Routes>
 
         </div>
