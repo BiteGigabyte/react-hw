@@ -1,5 +1,7 @@
 import './App.css';
 
+import {Users, Comments, Cars} from './components'
+
 
 // Зробити компонент, в якому буде форма, за допомоги якої можливо створити нового юзера постовим запитом на http://jsonplaceholder.typicode.com/users
 //     Зробити компонент, в якому буде форма, за допомоги якої можливо створити новий комментар постовим запитом на http://jsonplaceholder.typicode.com/comments
