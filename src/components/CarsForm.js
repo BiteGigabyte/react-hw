@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Car = () => {
+const CarsForm = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const Car = () => {
     );
 };
 
-export {Car};
+export {CarsForm};
